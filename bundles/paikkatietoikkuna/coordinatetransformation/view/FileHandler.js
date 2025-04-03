@@ -169,7 +169,6 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.FileHandler',
                 lineSeparator: this.loc('fileSettings.options.lineSeparator.label'),
                 choose: this.loc('fileSettings.options.choose')
             };
-            console.log(Object.keys(fileSettings));
             if (this.type === 'export') {
                 fileSettings.export = true;
             }
