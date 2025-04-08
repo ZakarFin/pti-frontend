@@ -60,11 +60,7 @@ Oskari.registerLocalization(
             {
                 "title": "Koordinaattimuunnos",
                 "tags": "ohje_koordinaattimuunnos"
-            },
-            {
-                "title": "Analyysi",
-                "tags": "ohje_analyysi"
-            },
+            }
         ]
     }
 }, true);

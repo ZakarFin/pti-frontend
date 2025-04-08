@@ -57,11 +57,7 @@ Oskari.registerLocalization(
             {
                 "title": "Coordinate Transformation",
                 "tags": "guide_coordinatetransformation"
-            },
-            {
-                "title": "Analysis",
-                "tags": "guide_analysis"
-            },
+            }
         ]
     }
 }, true);
