@@ -56,8 +56,7 @@ Oskari.clazz.define('Oskari.coordinatetransformation.component.SourceSelect',
                             `<div class="action-link">
                                 <div>&nbsp-&nbsp</div>
                                 <a href="javascript:void(0);">${action}</a>
-                            </div>`
-                        }
+                            </div>`}
                     </div>
                     <div class="infolink icon-info" data-source="${type}" title="${tooltip}"></div>
                 </div>`,

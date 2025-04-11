@@ -85,7 +85,7 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.FileHandler',
                     </div>
                     ${!obj.export
                         ? ''
-                        :`<div class="selection-wrapper lineSeparator">
+                        : `<div class="selection-wrapper lineSeparator">
                             <b class="title">${obj.lineSeparator}</b> 
                             <div class="settingsSelect">
                                 <select>

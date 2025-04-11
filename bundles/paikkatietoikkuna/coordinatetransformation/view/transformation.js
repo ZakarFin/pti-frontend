@@ -70,7 +70,7 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.transformation',
                     <input class="show" type="button" value="${show}"/>
                     <input class="export primary" type="button" value="${fileexport}"/>
                 </div>`,
-            filterSystems:({ title, systems, systemsInfo, epsg, epsgInfo }) =>
+            filterSystems: ({ title, systems, systemsInfo, epsg, epsgInfo }) =>
                 `<div class="systems-filter-wrapper">
                     <h4>${title}</h4>
                     <div class="coordinate-systems-filters">
