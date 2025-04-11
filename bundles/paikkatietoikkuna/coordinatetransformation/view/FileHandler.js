@@ -11,16 +11,16 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.FileHandler',
         me.metricSystem = false; // show degree systems options by default
         me.isFileInput = false;
         me.selections = {};
+        /* eslint-disable indent */
         me._template = {
             settings: (obj) =>
                 `<div class="coordinatetransformation-file-form">
-                    ${obj.export ?
-                        `<div class="selection-wrapper fileName without-infolink">
+                    ${obj.export
+                        ? `<div class="selection-wrapper fileName without-infolink">
                             <b class="title">${obj.fileName}</b>
                             <input type="text">
                         </div>`
-                        :
-                        `<div class="selection-wrapper fileInput without-infolink"></div>
+                        : `<div class="selection-wrapper fileInput without-infolink"></div>
                         <div class="selection-wrapper headerLineCount">
                             <b class="title">${obj.headerCount}</b>
                             <input type="number" value="0" min="0" required> 
@@ -43,8 +43,9 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.FileHandler',
                         </div>
                         <div class="infolink icon-info" data-selection="unitFormat"></div>
                     </div>
-                    ${!obj.export ? '' :
-                        `<div class="selection-wrapper decimalPrecision">
+                    ${!obj.export
+                        ? ''
+                        : `<div class="selection-wrapper decimalPrecision">
                             <b class="title">${obj.decimalPrecision}</b>
                             <div class="settingsSelect">
                             <select>
@@ -82,8 +83,9 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.FileHandler',
                         </div>
                         <div class="infolink icon-info" data-selection="coordinateSeparator"></div>
                     </div>
-                    ${!obj.export ? '' :
-                        `<div class="selection-wrapper lineSeparator">
+                    ${!obj.export
+                        ? ''
+                        :`<div class="selection-wrapper lineSeparator">
                             <b class="title">${obj.lineSeparator}</b> 
                             <div class="settingsSelect">
                                 <select>
@@ -104,8 +106,9 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.FileHandler',
                         <span>${obj.reverseCoords}</span>
                         <div class="infolink icon-info" data-selection="reverseCoordinates"></div>
                     </label> 
-                    ${!obj.export ? '' :
-                        `<label class="lbl writeHeader">
+                    ${!obj.export
+                        ? ''
+                        : `<label class="lbl writeHeader">
                             <input class="chkbox" type="checkbox">
                             <span>${obj.writeHeader}</span>
                             <div class="infolink icon-info" data-selection="writeHeader"></div>
@@ -124,6 +127,7 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.FileHandler',
                 </div>
             </div`
         };
+        /* eslint-enable indent */
     }, {
         getElement: function () {
             return this.element;

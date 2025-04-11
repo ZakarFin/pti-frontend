@@ -45,14 +45,14 @@ Oskari.clazz.define('Oskari.coordinatetransformation.component.SourceSelect',
                 // '<div class="datasource-actions-wrapper"></div>' +
                 '</div>'
             ),
-            source2: ({ type, label, action, tooltip}) =>
+            source2: ({ type, label, action = '', tooltip }) =>
                 `<div class="source-select-wrapper">
                     <div class="source-select">
                         <label>
                             <span></span>
                             ${label}
                         </label>
-                        ${!action ? '' :
+                        ${action &&
                             `<div class="action-link">
                                 <div>&nbsp-&nbsp</div>
                                 <a href="javascript:void(0);">${action}</a>

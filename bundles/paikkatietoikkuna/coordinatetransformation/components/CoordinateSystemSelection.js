@@ -15,35 +15,35 @@ Oskari.clazz.define('Oskari.coordinatetransformation.component.CoordinateSystemS
         this._template = {
             systemWrapper: jQuery('<div class="coordinate-system-wrapper"></div>'),
             coordinateSystemSelection: obj =>
-                `<h4>${ obj.title }</h4>
+                `<h4>${obj.title}</h4>
                 <div class="transformation-system">
                     <div class="system epsgSearch selection-wrapper">
-                        <b class="dropdown_title">${ obj.epsg_search }</b>
+                        <b class="dropdown_title">${obj.epsg_search}</b>
                         <input type="text" placeholder="3067"/>
                         <div class="infolink icon-info" data-system="epsgSearch" title="${obj.tooltip.epsgSearch}"></div>
                     </div>
                     <div class="system datum selection-wrapper system-filter">
-                        <b class="dropdown_title"> ${ obj.geodetic_datum }</b>
+                        <b class="dropdown_title"> ${obj.geodetic_datum}</b>
                         <div class="selectMountPoint"></div>
                         <div class="infolink icon-info" data-system="geodeticDatum" title="${obj.tooltip.geodeticDatum}"></div>
                     </div>
                     <div class="system coordinate selection-wrapper system-filter">
-                        <b class="dropdown_title"> ${ obj.coordinate_system }</b>
+                        <b class="dropdown_title"> ${obj.coordinate_system}</b>
                         <div class="selectMountPoint"></div>
                         <div class="infolink icon-info" data-system="coordinateSystem" title="${obj.tooltip.coordinateSystem}"></div>
                     </div>
                     <div class="system projection selection-wrapper system-filter">
-                        <b class="dropdown_title"> ${ obj.map_projection }</b>
+                        <b class="dropdown_title"> ${obj.map_projection}</b>
                         <div class="selectMountPoint"></div>
                         <div class="infolink icon-info" data-system="mapProjection" title="${obj.tooltip.mapProjection}"></div>
                     </div>
                     <div class="system geodetic-coordinate selection-wrapper">
-                        <b class="dropdown_title"> ${ obj.geodetic_coordinate_system } *</b>
+                        <b class="dropdown_title"> ${obj.geodetic_coordinate_system} *</b>
                         <div class="selectMountPoint"></div>
                         <div class="infolink icon-info" data-system="geodeticCoordinateSystem" title="${obj.tooltip.geodeticCoordinateSystem}"></div>
                     </div>
                     <div class="system elevation selection-wrapper">
-                        <b class="dropdown_title"> ${ obj.elevation_system } </b>
+                        <b class="dropdown_title"> ${obj.elevation_system} </b>
                         <div class="selectMountPoint"></div>
                         <div class="infolink icon-info" data-system="heightSystem" title="${obj.tooltip.heightSystem}"></div>
                     </div>
