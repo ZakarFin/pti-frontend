@@ -1,5 +1,3 @@
-import { template } from 'lodash';
-
 Oskari.clazz.define('Oskari.coordinatetransformation.component.CoordinateTable', function (view, loc, type) {
     this.loc = loc;
     this.type = type;
@@ -9,42 +7,42 @@ Oskari.clazz.define('Oskari.coordinatetransformation.component.CoordinateTable',
     this.isEditable = false;
     this.scrollTimer = null;
     this.template = {
-        tableWrapper: template('<div class="coordinate-table-wrapper <%= type %>">' +
-                                        '<h5> <%= title %> </h5>' +
-                                        '<div class="oskari-table-header"></div>' +
-                                        '<div class="oskari-table-content"></div>' +
-                                    '</div>'
-        ),
-        rowcounter: template('<div class="rowcount"><span class="row-counter">0</span> ${rows} </div>'),
-        header: template('<table class="oskari-tbl-header" cellpadding="0" cellspacing="0" border="0">' +
-                                '<thead>' +
-                                    '<tr>' +
-                                        '<th>${col1}</th>' +
-                                        '<th>${col2}</th>' +
-                                        '<th class="elevation">${elev}</th>' +
-                                    '</tr>' +
-                                 '</thead>' +
-                            '</table>'
-        ),
-        row: template('<tr>' +
-                                '<td class="cell">' +
-                                    '<div class="cellContent">${coords.col1}</div>' +
-                                '</td>' +
-                                '<td class="cell">' +
-                                    '<div class="cellContent">${coords.col2}</div>' +
-                                '</td>' +
-                                '<td class="cell elevation oskari-hidden">' +
-                                    '<div class="cellContent">${coords.elev}</div>' +
-                                '</td>' +
-                                '<td class="cell control">' +
-                                    '<div class="removerow"></div>' +
-                                '</td>' +
-                            '</tr> '
-        ),
-        table: template('<table class="hoverable oskari-coordinate-table two-dimensions" cellpadding="0" cellspacing="0" border="0">' +
-                                '<tbody></tbody' +
-                            '</table>'
-        )
+        tableWrapper: ({ type, title }) =>
+            `<div class="coordinate-table-wrapper ${type}">
+                <h5>${title}</h5>
+                <div class="oskari-table-header"></div>
+                <div class="oskari-table-content"></div>
+            </div>`,
+        rowcounter: ({ rows }) => `<div class="rowcount"><span class="row-counter">0</span> ${rows}</div>`,
+        header: ({ col1, col2, elev }) =>
+            `<table class="oskari-tbl-header" cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>${col1}</th>
+                        <th>${col2}</th>
+                        <th class="elevation">${elev}</th>
+                    </tr>
+                    </thead>
+            </table>`,
+        row: ({ coords }) =>
+            `<tr>
+                <td class="cell">
+                    <div class="cellContent">${coords.col1 || ''}</div>
+                </td>
+                <td class="cell">
+                    <div class="cellContent">${coords.col2 || ''}</div>
+                </td>
+                <td class="cell elevation oskari-hidden">
+                    <div class="cellContent">${coords.elev || ''}</div>
+                </td>
+                <td class="cell control">
+                    <div class="removerow"></div>
+                </td>
+            </tr>`,
+        table: () =>
+            `<table class="hoverable oskari-coordinate-table two-dimensions" cellpadding="0" cellspacing="0" border="0">
+                <tbody></tbody
+            </table>`
     };
 }, {
     getContainer: function () {

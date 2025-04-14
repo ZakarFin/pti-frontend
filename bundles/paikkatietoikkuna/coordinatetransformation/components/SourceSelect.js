@@ -1,5 +1,3 @@
-import { template } from 'lodash';
-
 Oskari.clazz.define('Oskari.coordinatetransformation.component.SourceSelect',
     function (loc) {
         Oskari.makeObservable(this);
@@ -47,25 +45,21 @@ Oskari.clazz.define('Oskari.coordinatetransformation.component.SourceSelect',
                 // '<div class="datasource-actions-wrapper"></div>' +
                 '</div>'
             ),
-            source2: template(
-                '<div class="source-select-wrapper">' +
-                    '<div class="source-select">' +
-                        // '<input type="radio" id="source-${type}" value="${type}">' +
-                        // '<label for="source-${type}">' +
-                        '<label>' +
-                            '<span></span>' +
-                            '${label}' +
-                        '</label>' +
-                        '<% if (obj.action) { %> ' +
-                            '<div class="action-link">' +
-                                '<div>&nbsp-&nbsp</div>' +
-                                '<a href="javascript:void(0);">${action}</a>' +
-                            '</div>' +
-                        '<% } %>' +
-                    '</div>' +
-                    '<div class="infolink icon-info" data-source="${type}" title="${tooltip}"></div>' +
-                '</div>'
-            ),
+            source2: ({ type, label, action = '', tooltip }) =>
+                `<div class="source-select-wrapper">
+                    <div class="source-select">
+                        <label>
+                            <span></span>
+                            ${label}
+                        </label>
+                        ${action &&
+                            `<div class="action-link">
+                                <div>&nbsp-&nbsp</div>
+                                <a href="javascript:void(0);">${action}</a>
+                            </div>`}
+                    </div>
+                    <div class="infolink icon-info" data-source="${type}" title="${tooltip}"></div>
+                </div>`,
             actions: ({ mapButton, fileButton }) =>
                 `<div class="datasource-action oskari-hidden">
                     <a href="javascript:void(0);">${mapButton}</a>

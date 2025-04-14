@@ -1,5 +1,3 @@
-import { template } from 'lodash';
-
 Oskari.clazz.define('Oskari.coordinatetransformation.view.transformation',
     function (instance, helper, dataHandler) {
         const me = this;
@@ -61,42 +59,37 @@ Oskari.clazz.define('Oskari.coordinatetransformation.view.transformation',
             divider: jQuery('<div class="auto-margin-divider"></div>'),
             // title: template('<h4 class="header"><%= title %></h4>'), //TODO move
             // TODO oskari btn
-            transformButton: template(
-                '<div class="transformation-button">' +
-                    '<input class="primary transform" type="button" value="<%= convert %> >>">' +
-                '</div>'
-            ),
+            transformButton: ({ convert }) =>
+                `<div class="transformation-button">
+                    <input class="primary transform" type="button" value="${convert}"/>
+                </div>`,
             // TODO oskari btn
-            utilRow: template(
-                '<div class="util-row-wrapper">' +
-                    '<input class="clear" type="button" value="<%= clear %> ">' +
-                    '<input class="show" type="button" value="<%= show %> ">' +
-                    '<input class="export primary" type="button" value="<%= fileexport %> ">' +
-                '</div>'
-            ),
-            filterSystems: template(
-                '<div class="systems-filter-wrapper">' +
-                    '<h4>${title}</h4>' +
-                    '<div class="coordinate-systems-filters">' +
-                        '<div class="source-select">' +
-                            '<input type="radio" id="filter-systems" name="filter-select" value="systems" checked>' +
-                            '<label for="filter-systems">' +
-                                '<span></span>' +
-                                '${systems}' +
-                            '</label>' +
-                // '<div class="infolink icon-info" data-source="systems" title="${systemsInfo}"></div>' +
-                        '</div>' +
-                        '<div class="source-select">' +
-                            '<input type="radio" id="filter-epsg" name="filter-select" value="epsg">' +
-                            '<label for="filter-epsg">' +
-                                '<span></span>' +
-                                '${epsg}' +
-                            '</label>' +
-                // '<div class="infolink icon-info" data-source="espg" title="${epsgInfo}"></div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>'
-            )
+            utilRow: ({ clear, show, fileexport }) =>
+                `<div class="util-row-wrapper">
+                    <input class="clear" type="button" value="${clear}"/>
+                    <input class="show" type="button" value="${show}"/>
+                    <input class="export primary" type="button" value="${fileexport}"/>
+                </div>`,
+            filterSystems: ({ title, systems, systemsInfo, epsg, epsgInfo }) =>
+                `<div class="systems-filter-wrapper">
+                    <h4>${title}</h4>
+                    <div class="coordinate-systems-filters">
+                        <div class="source-select">
+                            <input type="radio" id="filter-systems" name="filter-select" value="systems" checked />
+                            <label for="filter-systems">
+                                <span></span>
+                                ${systems}
+                            </label>
+                        </div>
+                        <div class="source-select">
+                            <input type="radio" id="filter-epsg" name="filter-select" value="epsg"/>
+                            <label for="filter-epsg">
+                                <span></span>
+                                ${epsg}
+                            </label>
+                        </div>
+                    </div>
+                </div>`
         };
     }, {
         getName: function () {
